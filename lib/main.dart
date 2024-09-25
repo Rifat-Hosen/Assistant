@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
         fontFamily: AppFonts.ibmPlexSans,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         pageTransitionsTheme: PageTransitionsTheme(builders: {
           TargetPlatform.android: CustomPageTransitionsBuilder(),
         }),

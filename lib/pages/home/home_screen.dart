@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import '../../index.dart';
 import 'index.dart';
+import 'responsive_layout/index.dart';
 
 
 class HomeScreen extends IView<HomeVM> {
@@ -19,17 +21,15 @@ class HomeScreen extends IView<HomeVM> {
           end: Alignment.bottomLeft,
         ),
       ),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Text('Assistant'),
-        ),
-        backgroundColor: Colors.transparent,
-        body:  Center(
-          child: Text("AI-ASSISTANT",style: TextStyle(color: Colors.black),),
-        )
+      child: ResponsiveLayout(
+        mobileBody: MobileBody(),
+        tabletBody: TabletBody(),
+        desktopBody: DesktopBody(),
       ),
     );
   }
 
+
+
 }
+
