@@ -1,11 +1,9 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import '../../index.dart';
 import 'index.dart';
 import 'responsive_layout/index.dart';
-
-
 class HomeScreen extends IView<HomeVM> {
   @override
   Widget buildWidget(BuildContext context, HomeVM viewModel) {
@@ -16,6 +14,7 @@ class HomeScreen extends IView<HomeVM> {
             Color(0XFFE4F0FE),
             Color(0XFFDCEBFC),
             Colors.white,
+
           ],
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
@@ -23,13 +22,9 @@ class HomeScreen extends IView<HomeVM> {
       ),
       child: ResponsiveLayout(
         mobileBody: MobileBody(),
-        tabletBody: TabletBody(),
+        tabletBody: TabBody(),
         desktopBody: DesktopBody(),
       ),
     );
   }
-
-
-
 }
-

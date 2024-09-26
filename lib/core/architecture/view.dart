@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../registry/index.dart';
-import 'index.dart';
+import 'package:assistant/core/index.dart';
 
 mixin VBaseMixin<T extends ViewModel>{
   Widget buildWidget(BuildContext context,T viewModel);
@@ -22,7 +20,7 @@ abstract class IView<T extends ViewModel> extends StatelessWidget with VBaseMixi
 
 
 class BIView<T extends ViewModel> extends StatefulWidget {
-  // final ViewModel viewModel = vmRegistry[T]!.call();
+  final ViewModel viewModel = vmRegistry[T]!.call();
   late Function(Function() f) setState;
   final Widget Function(BuildContext context, T model) builder;
 
