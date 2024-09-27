@@ -4,6 +4,7 @@ class HomeModel {
   bool chat_tab = false;
 
   bool hover = false;
+  int notification_count = 4;
 
   List<AssistantCardModel> assistants = [
     AssistantCardModel(

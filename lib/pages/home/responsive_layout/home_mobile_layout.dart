@@ -1,4 +1,5 @@
 import 'package:assistant/core/extensions.dart';
+import 'package:assistant/pages/home/responsive_layout/home_desktop_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../core/architecture/view.dart';
@@ -7,47 +8,87 @@ import '../home_vm.dart';
 class MobileBody extends IView<HomeVM> {
   @override
   Widget buildWidget(BuildContext context, HomeVM viewModel) {
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.cyan,
+          backgroundColor: Color(0XFFB5F3FE),
           leading: Image.asset("assets/images/ki.png"),
-          actions: [const Icon(Icons.lock_clock), const Gap(10), const Icon(Icons.notifications), const Gap(10), const Icon(Icons.settings), const Gap(5)],
+          actions: [
+            const Icon(Icons.document_scanner_outlined,color: Colors.black,size: 35,),
+            const Gap(20),
+             Badge(
+              isLabelVisible: true,
+              label: Text(viewModel.model.notification_count.toString()),
+              offset: Offset(5, -5),
+              backgroundColor: Colors.red,
+              child: Icon(
+                Icons.notifications_none,color: Colors.black,size: 35,
+              ),
+            ),
+            const Gap(10),
+            Image.asset('assets/images/profile.png'),
+            const Gap(5),
+          ],
           bottom: const TabBar(
-            labelColor: Colors.black,
+            dividerColor: Colors.white,
+            unselectedLabelColor: Colors.black,
+            labelColor: Colors.blue,
             tabs: [
               Tab(
-                icon: Icon(Icons.chat_bubble),
+                icon: Icon(
+                  Icons.home_outlined,
+                  size: 25,
+                ),
               ),
               Tab(
-                icon: Icon(Icons.video_call),
+                icon: Icon(Icons.chat, size: 25),
               ),
               Tab(
-                icon: Icon(Icons.settings),
+                icon: Icon(Icons.watch_later_outlined, size: 25),
               ),
               Tab(
-                icon: Icon(Icons.settings),
+                icon: Icon(Icons.settings, size: 25),
               )
             ],
+            indicator: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(color: Colors.transparent), // Removes TabBar underline
+              ),
+            ),
           ),
         ),
-        body: const TabBarView(
-          children: [
-            Center(
-              child: Text("Chats"),
+        body: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.transparent, // No border
+              width: 0, // Set border width to 0
             ),
-            Center(
-              child: Text("Calls"),
+            gradient: LinearGradient(
+              colors: [
+                Color(0XFFA4F0FE),
+                Color(0XFFFFF0FE),
+                Colors.white,
+              ],
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
             ),
-            Center(
-              child: Text("Settings"),
-            ),
-            Center(
-              child: Text("Settings"),
-            ),
-          ],
+          ),
+          child:  TabBarView(
+            children: [
+
+              HomeMainBody(viewModel : viewModel),
+              chat(),
+              Center(
+                child: Text("Working on Feature"),
+              ),
+              Center(
+                child: Text("Working on Feature"),
+              ),
+            ],
+          ),
         ),
       ),
     );
