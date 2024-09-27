@@ -3,6 +3,7 @@ import 'package:assistant/pages/home/responsive_layout/home_desktop_layout.dart'
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../core/architecture/view.dart';
+import '../Components/index.dart';
 import '../home_vm.dart';
 
 class MobileBody extends IView<HomeVM> {
