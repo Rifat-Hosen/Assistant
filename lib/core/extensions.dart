@@ -10,16 +10,17 @@ extension PreSize on num {
     BuildContext? context = MyApp.navigatorKey.currentContext;
     if (context != null) {
       final size = MediaQuery.of(context).size;
-      final ratio;
-      if(size.width<size.height){
-        ratio = size.width / size.height;
+      double ratio;
+
+      if (size.width < 600) {
+        ratio = 600 / size.width;
+      } else if (size.width <= 1024) {
+        ratio =  (1024/size.width); // Adjust ratio for tablets
+      } else {
+        ratio = 1.0;  // Adjust ratio for desktops
       }
-      else {
-        ratio = size.height / size.width;
-      }
-      final deviceRatio = MediaQuery.of(context).size.aspectRatio;
-      //return toDouble() * deviceRatio;
-      return toDouble() ;
+
+      return toDouble() / ratio;
     }
     return toDouble();
   }

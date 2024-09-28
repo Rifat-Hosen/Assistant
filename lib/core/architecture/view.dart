@@ -49,7 +49,6 @@ class _BaseStatefulWidgetState<T extends ViewModel> extends State<BIView<T>> {
     viewModel.buildProperty(context, args);
     return Builder(
         builder: (context) {
-          int v = viewModel.v.reactiveValue(context);
           return widget.builder(context, viewModel);
         }
     );

@@ -1,8 +1,9 @@
+import 'package:assistant/index.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'package:gap/gap.dart';
 import '../index.dart';
 import 'index.dart';
-
 
 class HomeMainBody extends StatelessWidget {
   final HomeVM viewModel;
@@ -15,11 +16,15 @@ class HomeMainBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      padding:  EdgeInsets.all(5),
+      padding: EdgeInsets.all(5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Visibility(
+              visible: MediaQuery.of(context).size.width > 1024,
+              child: Gap(40.rp),
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -28,16 +33,25 @@ class HomeMainBody extends StatelessWidget {
                 children: [
                   Text(
                     'AI-Legal Advisor',
-                    style: TextStyle(
-                      fontSize: 50,
+                    style: GoogleFonts.turretRoad(
+                      fontSize: 70.rp,
+                      fontWeight: FontWeight.w900// Adaptive font size
                     ),
                   ),
+                  Text(
+                    'Your assistants are ready to work',
+                    style: TextStyle(
+                      fontSize: 32.rp,color: Colors.grey
+                    ),
+                  ),
+                  Gap(30),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: viewModel.model.assistants.map((assistant) {
-                        return AssistaintDetailsContainer(icon_name: assistant.icon_name, name: assistant.name, isSelect: assistant.isSelect, description: assistant.description, ispro: assistant.isPro);
+                        return AssistaintDetailsContainer(
+                            icon_name: assistant.icon_name, name: assistant.name, isSelect: assistant.isSelect, description: assistant.description, ispro: assistant.isPro);
                       }).toList(),
                     ),
                   ),
@@ -47,22 +61,22 @@ class HomeMainBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          flex :5,
-                          child:  Text(
+                          flex: 5,
+                          child: Text(
                             'Start a new Conversation',
                             textAlign: TextAlign.start,
                             maxLines: 2,
-                            style: TextStyle(fontSize: 40),
+                            style: TextStyle(fontSize: 25.rp),
                           ),
                         ),
                         Expanded(
-                          flex: 2,
+                          flex: MediaQuery.of(context).size.width>1024 ? 1:2,
                           child: Container(
-                            width: 100,
+
                             height: 60,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), border: Border.all(color: Colors.black38)),
                             child: const Row(
-                              mainAxisSize: MainAxisSize.min,
+                              mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Icon(
@@ -75,7 +89,10 @@ class HomeMainBody extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        Visibility(
+                          visible: MediaQuery.of(context).size.width>1024,
+                          child: Gap(30),),
                       ],
                     ),
                   ),
@@ -107,8 +124,7 @@ class HomeMainBody extends StatelessWidget {
                   height: 90,
                   color: Colors.transparent,
                   child: Row(
-                    crossAxisAlignment: MediaQuery.of(context).size.width>600 ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-
+                    crossAxisAlignment: MediaQuery.of(context).size.width > 600 ? CrossAxisAlignment.start : CrossAxisAlignment.center,
                     children: [
                       Container(
                         width: 60.0,
@@ -135,12 +151,11 @@ class HomeMainBody extends StatelessWidget {
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-
-                                  labelText: MediaQuery.of(context).size.width>600 ?'Type / to use custom tools' : 'Type / to use custom tools',
+                                  labelText: MediaQuery.of(context).size.width > 600 ? 'Type / to use custom tools' : 'Type / to use custom tools',
                                 ),
                               ),
                               Visibility(
-                                visible: MediaQuery.of(context).size.width>600,
+                                visible: MediaQuery.of(context).size.width > 600,
                                 child: Row(
                                   children: [
                                     const Text(
@@ -173,7 +188,6 @@ class HomeMainBody extends StatelessWidget {
                                   ],
                                 ),
                               )
-
                             ],
                           ),
                         ),
@@ -208,7 +222,6 @@ class HomeMainBody extends StatelessWidget {
                     ],
                   ),
                 ),
-
               ],
             ),
           )

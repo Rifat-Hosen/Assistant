@@ -42,7 +42,6 @@ class DesktopBody extends IView<HomeVM> {
                     InkWell(
                       onTap: () {
                         viewModel.model.chat_tab = !viewModel.model.chat_tab;
-                        print(viewModel.model.chat_tab);
                         viewModel.setState();
                       },
                       child: Image.asset('assets/images/chat.png'),
