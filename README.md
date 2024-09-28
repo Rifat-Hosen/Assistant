@@ -4,13 +4,18 @@ This Flutter demo project that adapt UI for mobile, tablet, and desktop screens.
 # Architecture
 - Flutter MVVM architecture
 
-### Folder Descriptions:
+### File Descriptions:
 
-- **models/**: Contains data models and business logic for the app, such as classes to represent data and other entities.
-- **view/**: This directory is divided by device type (mobile, tablet, desktop) and contains the UI components. It also includes shared widgets that can be reused across different layouts.
+- **_model/**: Contains data models and business logic for the app, such as classes to represent data and other entities.
+- **_screen/**: This file is divided by device type (mobile, tablet, desktop) and contains the UI components. It also includes shared widgets that can be reused across different layouts.
 - **viewmodels/**: Responsible for managing application state using `ReactiveValueNotifier`. The ViewModel interacts with the services and provides the data to the views.
 - **responsive_layout.dart**: The entry point of the application, where the `MaterialApp` is initialized, and responsive breakpoints are set up.
 - **routes.dart**: Defines the named routes for navigation across different screens in the app.
+- **values.dart**: Contains frequently used values/colors/fonts
+- **extensions.dart"": contains custom logic(ratio-pixel) for adaptive device screen.
+- **\architecture**: MVVM architecture
+- **\registry**: MVVM architecture model registry to viewmodel
+-  **\pages**: This dir contain all pages & each page directory contains minnimum 3 file(Screen,model,ViewModel)
 
 
 ## Features
