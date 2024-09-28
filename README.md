@@ -18,6 +18,8 @@ This Flutter demo project that adapt UI for mobile, tablet, and desktop screens.
 - **Responsive UI**: Automatically adjusts layouts for different screen sizes (mobile, tablet, desktop).
 - **Adaptive Layouts**: Different UI layouts for mobile, tablet, and desktop using `Custom extension `.
 - **Screen Size Handling**:custom extension screen scaling and breakpoints.
+# Required figma design for Project
+- https://www.figma.com/design/IBaajgBoemhqpZpeKxBPpJ/Codia-AI-Design%3A-Screenshot-to-Editable-Figma-Design-(Community)?node-id=0-1&m=dev&t=gdM0pAd1lTdW8bUI-1
 
 # Required design for Project
 ![Desktop UI](assets/ui/ui_design.png)
