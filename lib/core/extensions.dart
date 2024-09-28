@@ -19,7 +19,22 @@ extension PreSize on num {
       } else {
         ratio = 1.0;  // Adjust ratio for desktops
       }
+      return toDouble() / ratio;
+    }
+    return toDouble();
+  }
+  double get mrp {
+    BuildContext? context = MyApp.navigatorKey.currentContext;
+    if (context != null) {
+      final size = MediaQuery.of(context).size;
+      double ratio;
 
+      if (size.width < 600) {
+        ratio = 600 / size.width;
+      }
+      else {
+        ratio = 1.0;  // Adjust ratio for desktops
+      }
       return toDouble() / ratio;
     }
     return toDouble();

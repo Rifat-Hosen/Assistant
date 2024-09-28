@@ -121,14 +121,14 @@ class HomeMainBody extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: 90,
+                  height: 90.mrp,
                   color: Colors.transparent,
                   child: Row(
                     crossAxisAlignment: MediaQuery.of(context).size.width > 600 ? CrossAxisAlignment.start : CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: 60.0,
-                        height: 60.0,
+                        width: 60.mrp,
+                        height: 60.mrp,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: const Color(0XFFF4F5F6),
@@ -193,13 +193,13 @@ class HomeMainBody extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        width: 125,
-                        height: 60,
+                        width: 125.mrp,
+                        height: 60.mrp,
                         decoration: BoxDecoration(
                           color: const Color(0xFF4A39E4),
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: const Row(
+                        child:  Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -208,13 +208,13 @@ class HomeMainBody extends StatelessWidget {
                               'Send',
                               style: TextStyle(
                                 color: Color(0xFF9EB2BF),
-                                fontSize: 20,
+                                fontSize: 20.mrp,
                               ),
                             ),
                             Icon(
                               Icons.send,
                               color: Colors.white,
-                              size: 24,
+                              size: 24.mrp,
                             ),
                           ],
                         ),
