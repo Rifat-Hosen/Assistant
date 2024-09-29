@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'core/index.dart';
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+void main(){
   runApp(const MyApp());
 }
 

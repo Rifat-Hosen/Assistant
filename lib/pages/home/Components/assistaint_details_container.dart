@@ -21,7 +21,7 @@ class AssistaintDetailsContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 328,
-      height: 175,
+      height: 190,
       margin: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         color: const Color(0xFFFCFDFD),

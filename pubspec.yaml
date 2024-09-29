@@ -19,8 +19,6 @@ dependencies:
   flutter_reactive_value: ^2.0.1
   badges: ^3.1.2
   gap: ^3.0.1
-  flutterflow_ui: ^0.3.1
-  flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
 
 

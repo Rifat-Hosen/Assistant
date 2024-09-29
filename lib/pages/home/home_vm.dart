@@ -9,6 +9,12 @@ class HomeVM extends ViewModel<HomeModel> {
   void buildProperty(BuildContext context, [Object? args]) {
     super.buildProperty(context, args);
   }
+  bool isMobile(BuildContext context){
+      return MediaQuery.of(context).size.width > 600;
+  }
+  bool isDesktop(BuildContext context){
+    return MediaQuery.of(context).size.width > 1280;
+  }
 
   /*void hoverIn() {
     model.hover = true;
