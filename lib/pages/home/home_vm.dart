@@ -16,7 +16,22 @@ class HomeVM extends ViewModel<HomeModel> {
     return MediaQuery.of(context).size.width > 1280;
   }
 
-  /*void hoverIn() {
+  bool effect = false;
+  int hoverindex = -1;
+  void hoverIn(int index) {
+    effect = true;
+    hoverindex = index;
+    setState();
+  }
+
+  void hoverOut() {
+    effect = false;
+    hoverindex = -1;
+    setState();
+  }
+
+
+/*void hoverIn() {
     model.hover = true;
     setState();
   }
