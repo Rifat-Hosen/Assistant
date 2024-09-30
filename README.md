@@ -36,8 +36,8 @@ This Flutter demo project that adapt UI for mobile, tablet, and desktop screens.
 ![Desktop UI](assets/ui/phone1.png)
 ![Desktop UI](assets/ui/phone2.png)
 
-![Desktop UI](assets/ui/tab1.png)
-![Desktop UI](assets/ui/tab2.png)
+![Desktop UI](assets/ui/tab3.png)
+
 
 
 ## Limitations
