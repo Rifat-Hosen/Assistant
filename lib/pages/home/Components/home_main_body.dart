@@ -39,9 +39,6 @@ class HomeMainBody extends StatelessWidget {
                       'AI-Legal Advisor',
                       style: GoogleFonts.turretRoad(fontSize: 70.rp, fontWeight: FontWeight.w900 // Adaptive font size
                           ),
-                      /*style: TextStyle(
-                          fontSize: 30.rp
-                      ),*/
                     ),
                     Text(
                       'Your assistants are ready to work',
@@ -183,7 +180,7 @@ class HomeMainBody extends StatelessWidget {
                     height: 100.mrp,
                     color: Colors.transparent,
                     child: Row(
-                      crossAxisAlignment: viewModel.isMobile(context) ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+                      crossAxisAlignment: viewModel.isMobile(context) ? CrossAxisAlignment.center : CrossAxisAlignment.start,
                       children: [
                         Container(
                           width: 60.mrp,

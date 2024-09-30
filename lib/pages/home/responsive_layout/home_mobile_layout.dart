@@ -8,9 +8,10 @@ class MobileBody extends IView<HomeVM> {
   @override
   Widget buildWidget(BuildContext context, HomeVM viewModel) {
 
-    return DefaultTabController(
-      length: 4,
-      child: SafeArea(
+    return SafeArea(
+      top: true,
+      child: DefaultTabController(
+        length: 4,
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
@@ -55,7 +56,7 @@ class MobileBody extends IView<HomeVM> {
               ],
               indicator: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(color: Colors.transparent), // Removes TabBar underline
+                  bottom: BorderSide(color: Colors.transparent),
                 ),
               ),
             ),
