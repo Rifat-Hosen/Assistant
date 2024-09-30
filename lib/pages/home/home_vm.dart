@@ -10,7 +10,7 @@ class HomeVM extends ViewModel<HomeModel> {
     super.buildProperty(context, args);
   }
   bool isMobile(BuildContext context){
-      return MediaQuery.of(context).size.width > 600;
+      return MediaQuery.of(context).size.width < 600;
   }
   bool isDesktop(BuildContext context){
     return MediaQuery.of(context).size.width > 1280;

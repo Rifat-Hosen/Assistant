@@ -210,11 +210,11 @@ class HomeMainBody extends StatelessWidget {
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    labelText: viewModel.isMobile(context) ? 'Type / to use custom tools' : 'Type / to use custom tools',
+                                    labelText: viewModel.isMobile(context) ? 'Type / to use custom tools' : '',
                                   ),
                                 ),
                                 Visibility(
-                                  visible: viewModel.isMobile(context),
+                                  visible: !viewModel.isMobile(context) ,
                                   child: Row(
                                     children: [
                                       const Text(
